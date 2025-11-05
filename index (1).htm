@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sun Dental Labs — Website Refresh Mockup</title>
+  <meta name="description" content="Digital restorations, delivered fast — with quality you can measure." />
+  <!-- Tailwind CSS via CDN (for a single-file mockup). For a production build, compile locally. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Minimal focus visibility for keyboard users */
+    :focus-visible { outline: 2px solid rgba(239,68,68,.35); outline-offset: 2px; }
+    /* Smooth fade for mobile nav */
+    .fade-enter { opacity: 0; transform: translateY(-4px); }
+    .fade-enter-active { opacity: 1; transform: translateY(0); transition: opacity .2s ease, transform .2s ease; }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 bg-white">
+  <!-- Top Announcement -->
+  <div class="bg-slate-900 text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center gap-2 md:gap-4 justify-between">
+      <p class="opacity-90">
+        Trusted digital dental laboratory — rapid turnaround &amp; predictable pricing.
+      </p>
+      <div class="flex items-center gap-4">
+        <a href="tel:+441226786163" class="inline-flex items-center gap-2 hover:opacity-90">
+          <!-- Phone icon -->
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.78.57 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.14a2 2 0 0 1 2.11-.45c.85.27 1.73.45 2.63.57A2 2 0 0 1 22 16.92z"/></svg>
+          +44 01226 786163
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 hover:opacity-90">
+          <!-- Mail icon -->
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b" id="home">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between" aria-label="Primary">
+      <a href="#home" class="flex items-center gap-3" aria-label="Sun Dental Labs home">
+        <img
+          src="https://www.sundentallabs.co.uk/wp-content/themes/sun-dental-labs/img/common/sdl-logo.png"
+          alt="Sun Dental Labs logo"
+          class="h-7 w-auto object-contain"
+          loading="lazy"
+          width="160" height="28"
+        />
+        <span class="sr-only">Sun Dental Labs</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#solutions" class="hover:text-slate-600">Solutions</a>
+        <a href="#workflow" class="hover:text-slate-600">Digital Workflow</a>
+        <a href="#products" class="hover:text-slate-600">Products</a>
+        <a href="#resources" class="hover:text-slate-600">Resources</a>
+        <a href="#about" class="hover:text-slate-600">About</a>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-2">
+        <a href="#mvs" class="min-h-11 inline-flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-slate-50 focus-visible:outline-red-300">MySun Login</a>
+        <a href="#cta" class="min-h-11 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:opacity-90 focus-visible:outline-red-300">Start a case</a>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border focus:outline-none focus-visible:outline-red-300"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+        id="menuBtn"
+      >
+        <!-- Menu icon -->
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile nav panel -->
+    <div id="mobile-nav" class="hidden md:hidden border-t bg-white" role="dialog" aria-modal="true">
+      <div class="max-w-7xl mx-auto px-4 py-3 grid gap-1 fade-enter">
+        <a href="#solutions" class="py-3 border-b last:border-0">Solutions</a>
+        <a href="#workflow" class="py-3 border-b last:border-0">Digital Workflow</a>
+        <a href="#products" class="py-3 border-b last:border-0">Products</a>
+        <a href="#resources" class="py-3 border-b last:border-0">Resources</a>
+        <a href="#about" class="py-3 border-b last:border-0">About</a>
+        <div class="flex items-center gap-2 pt-2">
+          <a href="#mvs" class="flex-1 min-h-12 inline-flex items-center justify-center px-4 py-3 border rounded-lg hover:bg-slate-50">MySun</a>
+          <a href="#cta" class="flex-1 min-h-12 inline-flex items-center justify-center px-4 py-3 rounded-lg bg-slate-900 text-white">Start a case</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-red-50/50"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-12 md:py-24 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+          Digital restorations, delivered fast — with quality you can measure
+        </h1>
+        <p class="mt-4 text-slate-600 max-w-prose">
+          A UK-based, fully digital lab supporting intraoral scans from any major system. Predictable 8–10 business day delivery, clear communication, and consistent, aesthetic results for everyday dentistry.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
+          <a href="#cta" class="w-full sm:w-auto min-h-12 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-slate-900 text-white hover:opacity-90 focus-visible:outline-red-300">
+            Send a scan
+            <!-- ArrowRight icon -->
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+          </a>
+          <a href="#workflow" class="w-full sm:w-auto min-h-12 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border hover:bg-slate-50 focus-visible:outline-red-300">
+            See the workflow
+          </a>
+        </div>
+        <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <li class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Any scanner accepted</li>
+          <li class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> CAD/CAM &amp; 3D printed</li>
+          <li class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> UK support team</li>
+          <li class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Transparent pricing</li>
+        </ul>
+      </div>
+      <div class="relative">
+        <div class="rounded-2xl border shadow-sm bg-white p-4">
+          <div class="aspect-video rounded-lg bg-slate-100 grid place-content-center text-slate-400">
+            <span>Hero image / lab workflow</span>
+          </div>
+          <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+            <div class="border rounded-xl p-3">
+              <p class="text-sm font-medium flex items-center justify-between">Turnaround <span class="inline-block w-2 h-2 rounded-full bg-red-500/70"></span></p>
+              <p class="text-slate-600">8–10 business days</p>
+            </div>
+            <div class="border rounded-xl p-3">
+              <p class="text-sm font-medium flex items-center justify-between">Remake rate <span class="inline-block w-2 h-2 rounded-full bg-red-500/70"></span></p>
+              <p class="text-slate-600">&lt; 2% (target)</p>
+            </div>
+            <div class="border rounded-xl p-3">
+              <p class="text-sm font-medium flex items-center justify-between">Crown fit score <span class="inline-block w-2 h-2 rounded-full bg-red-500/70"></span></p>
+              <p class="text-slate-600">Consistent margins</p>
+            </div>
+            <div class="border rounded-xl p-3">
+              <p class="text-sm font-medium flex items-center justify-between">Support <span class="inline-block w-2 h-2 rounded-full bg-red-500/70"></span></p>
+              <p class="text-slate-600">Same-day responses</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scanner badges -->
+  <section class="border-t bg-white" aria-label="Scanner partners">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <p class="text-xs uppercase tracking-wider text-slate-500">Works with your scanner</p>
+      <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        <div class="h-12 rounded-lg border bg-white grid place-content-center text-slate-500 text-sm">3Shape</div>
+        <div class="h-12 rounded-lg border bg-white grid place-content-center text-slate-500 text-sm">iTero</div>
+        <div class="h-12 rounded-lg border bg-white grid place-content-center text-slate-500 text-sm">Sirona</div>
+        <div class="h-12 rounded-lg border bg-white grid place-content-center text-slate-500 text-sm">Carestream</div>
+        <div class="h-12 rounded-lg border bg-white grid place-content-center text-slate-500 text-sm">DEXIS</div>
+        <div class="h-12 rounded-lg border bg-white grid place-content-center text-slate-500 text-sm">MediLink</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="bg-slate-50 border-t">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="flex items-center gap-3">
+        <h2 class="text-2xl md:text-3xl font-semibold">Solutions for everyday restorative and removable cases</h2>
+        <span class="inline-block w-10 h-1 bg-red-500 rounded"></span>
+      </div>
+      <p class="mt-2 text-slate-600 max-w-prose">From single units to full-arch and clear aligner therapy, choose the right material and protocol for each indication.</p>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-2xl border bg-white p-5 hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold flex items-center justify-between">SunCeram® Zirconia <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <p class="text-slate-600 mt-2">Highly aesthetic zirconia crowns &amp; bridges with natural translucency.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Zirconia guide <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-2xl border bg-white p-5 hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold flex items-center justify-between">SunFlex® Partials <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <p class="text-slate-600 mt-2">Flexible, comfortable removable partials with excellent retention.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Partial options <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-2xl border bg-white p-5 hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold flex items-center justify-between">Implant Restorations <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <p class="text-slate-600 mt-2">Custom abutments, screw-retained and cement-retained solutions.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Implant menu <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <!-- Card 4 -->
+        <div class="rounded-2xl border bg-white p-5 hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold flex items-center justify-between">Clear Aligners (SunClear) <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <p class="text-slate-600 mt-2">Stage-by-stage treatment with remote tracking support.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Aligner overview <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <!-- Card 5 -->
+        <div class="rounded-2xl border bg-white p-5 hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold flex items-center justify-between">Fixed Appliances <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <p class="text-slate-600 mt-2">Digital planning and precise appliance fabrication.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Appliance list <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <!-- Card 6 -->
+        <div class="rounded-2xl border bg-white p-5 hover:shadow-md transition-shadow">
+          <p class="text-lg font-semibold flex items-center justify-between">Whitening &amp; Night Guards <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <p class="text-slate-600 mt-2">Tray systems and protective occlusal appliances.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Accessory range <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow -->
+  <section id="workflow" class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="flex items-center gap-3">
+        <h2 class="text-2xl md:text-3xl font-semibold">A simple digital workflow</h2>
+        <span class="inline-block w-10 h-1 bg-red-500 rounded"></span>
+      </div>
+      <ol class="mt-8 grid md:grid-cols-4 gap-6">
+        <li class="relative">
+          <div class="rounded-2xl border bg-white p-5 h-full">
+            <div class="w-10 h-10 rounded-full bg-red-50 text-red-700 grid place-content-center font-semibold border border-red-200">1</div>
+            <h3 class="mt-3 font-semibold text-lg">Scan</h3>
+            <p class="text-slate-600 text-sm mt-1">Capture intraoral scan from your preferred system.</p>
+          </div>
+        </li>
+        <li class="relative">
+          <div class="rounded-2xl border bg-white p-5 h-full">
+            <div class="w-10 h-10 rounded-full bg-red-50 text-red-700 grid place-content-center font-semibold border border-red-200">2</div>
+            <h3 class="mt-3 font-semibold text-lg">Submit</h3>
+            <p class="text-slate-600 text-sm mt-1">Attach Rx and send via MySun or secure upload.</p>
+          </div>
+        </li>
+        <li class="relative">
+          <div class="rounded-2xl border bg-white p-5 h-full">
+            <div class="w-10 h-10 rounded-full bg-red-50 text-red-700 grid place-content-center font-semibold border border-red-200">3</div>
+            <h3 class="mt-3 font-semibold text-lg">Design &amp; Manufacture</h3>
+            <p class="text-slate-600 text-sm mt-1">CAD/CAM planning, try‑in options, 3D printing &amp; milling.</p>
+          </div>
+        </li>
+        <li class="relative">
+          <div class="rounded-2xl border bg-white p-5 h-full">
+            <div class="w-10 h-10 rounded-full bg-red-50 text-red-700 grid place-content-center font-semibold border border-red-200">4</div>
+            <h3 class="mt-3 font-semibold text-lg">Deliver</h3>
+            <p class="text-slate-600 text-sm mt-1">Receive restorations in 8–10 business days with updates.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="mt-8">
+        <div class="rounded-2xl border bg-white p-5">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <p class="font-medium">Already scanning?</p>
+              <p class="text-slate-600 text-sm">Add us as a production lab in your scanner or upload scans directly.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-2 border rounded-full px-3 py-1 text-sm"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>3Shape</span>
+              <span class="inline-flex items-center gap-2 border rounded-full px-3 py-1 text-sm"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>iTero</span>
+              <span class="inline-flex items-center gap-2 border rounded-full px-3 py-1 text-sm"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Sirona</span>
+              <span class="inline-flex items-center gap-2 border rounded-full px-3 py-1 text-sm"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Carestream</span>
+              <span class="inline-flex items-center gap-2 border rounded-full px-3 py-1 text-sm"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>DEXIS</span>
+              <span class="inline-flex items-center gap-2 border rounded-full px-3 py-1 text-sm"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Shining</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products highlight -->
+  <section id="products" class="bg-slate-50 border-t">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="flex items-center gap-3">
+        <h2 class="text-2xl md:text-3xl font-semibold">Featured products</h2>
+        <span class="inline-block w-10 h-1 bg-red-500 rounded"></span>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <!-- Product cards -->
+        <div class="rounded-2xl border bg-white p-5">
+          <p class="font-semibold flex items-center justify-between">SunCeram® Zirconia <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <ul class="mt-2 space-y-2 text-slate-600">
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Anterior-grade translucency</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Posterior strength</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Natural shade matching</li>
+          </ul>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Learn more <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <div class="rounded-2xl border bg-white p-5">
+          <p class="font-semibold flex items-center justify-between">SunFlex® Partials <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <ul class="mt-2 space-y-2 text-slate-600">
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Flexible comfort</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Excellent retention</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Metal‑free aesthetics</li>
+          </ul>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Learn more <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+        <div class="rounded-2xl border bg-white p-5">
+          <p class="font-semibold flex items-center justify-between">SunClear Aligners <span class="inline-block w-8 h-[3px] bg-red-500/80 rounded"></span></p>
+          <ul class="mt-2 space-y-2 text-slate-600">
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Case planning support</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Stage-by-stage tracking</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-600"></span> Clear pricing</li>
+          </ul>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Learn more <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .587l3.668 7.431L24 9.748l-6 5.847 1.417 8.268L12 19.771l-7.417 4.092L6 15.595 0 9.748l8.332-1.73z"/></svg>
+        <h2 class="text-2xl md:text-3xl font-semibold">What dentists say</h2>
+        <span class="inline-block w-10 h-1 bg-red-500 rounded ml-3"></span>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border bg-white p-6">
+          <p class="text-slate-700 italic">“Consistently aesthetic crowns and clear timelines. Communication is spot‑on.”</p>
+          <p class="mt-3 text-sm text-slate-500">— Dr. A. Example, BDS</p>
+        </div>
+        <div class="rounded-2xl border bg-white p-6">
+          <p class="text-slate-700 italic">“Reliable, friendly, and fast. Our team loves the predictability.”</p>
+          <p class="mt-3 text-sm text-slate-500">— Dr. B. Example, BDS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="bg-gradient-to-br from-sky-50 via-white to-red-50 border-t">
+    <div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10">
+      <div>
+        <div class="flex items-center gap-3">
+          <h2 class="text-2xl md:text-3xl font-semibold">Start your first case in minutes</h2>
+          <span class="inline-block w-10 h-1 bg-red-500 rounded"></span>
+        </div>
+        <ul class="mt-4 space-y-2 text-slate-600">
+          <li class="flex gap-2"><span class="w-4 h-4 rounded-full bg-red-600 mt-1 inline-block"></span> Register for a MySun account</li>
+          <li class="flex gap-2"><span class="w-4 h-4 rounded-full bg-red-600 mt-1 inline-block"></span> Upload scans and Rx securely</li>
+          <li class="flex gap-2"><span class="w-4 h-4 rounded-full bg-red-600 mt-1 inline-block"></span> Get a delivery date instantly</li>
+        </ul>
+      </div>
+      <form class="bg-white border rounded-2xl p-6 shadow-sm" aria-label="Request information" id="contact">
+        <div class="grid gap-4">
+          <div>
+            <label class="text-sm" for="name">Full name</label>
+            <input id="name" class="mt-1 w-full rounded-lg border px-3 py-2 focus-visible:outline-red-300" placeholder="Dr Jane Smith" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm" for="email">Email</label>
+              <input id="email" type="email" class="mt-1 w-full rounded-lg border px-3 py-2 focus-visible:outline-red-300" placeholder="name@practice.co.uk" />
+            </div>
+            <div>
+              <label class="text-sm" for="phone">Phone</label>
+              <input id="phone" class="mt-1 w-full rounded-lg border px-3 py-2 focus-visible:outline-red-300" placeholder="+44" />
+            </div>
+          </div>
+          <div>
+            <label class="text-sm" for="message">How can we help?</label>
+            <textarea id="message" class="mt-1 w-full rounded-lg border px-3 py-2 focus-visible:outline-red-300" rows="3" placeholder="Tell us about your case or request pricing…"></textarea>
+          </div>
+          <button type="submit" class="w-full min-h-12 inline-flex items-center justify-center px-4 py-3 rounded-lg bg-slate-900 text-white hover:opacity-90">Request more info</button>
+          <p class="text-xs text-slate-500 text-center">We respond within one business day.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section id="resources" class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="flex items-center gap-3">
+        <h2 class="text-2xl md:text-3xl font-semibold">Resources</h2>
+        <span class="inline-block w-10 h-1 bg-red-500 rounded"></span>
+      </div>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border bg-white p-6 hover:shadow-md transition-shadow">
+          <p class="font-semibold">Postage labels</p>
+          <p class="text-slate-600 mt-1">Download printable postage labels and instructions.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Download</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-6 hover:shadow-md transition-shadow">
+          <p class="font-semibold">Rx forms</p>
+          <p class="text-slate-600 mt-1">Download printable Rx forms and instructions.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Download</a>
+        </div>
+        <div class="rounded-2xl border bg-white p-6 hover:shadow-md transition-shadow">
+          <p class="font-semibold">Prep guides</p>
+          <p class="text-slate-600 mt-1">Download printable prep guides and instructions.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-slate-50">Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-slate-50 border-t">
+    <div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <div class="flex items-center gap-3">
+          <h2 class="text-2xl md:text-3xl font-semibold">About Sun Dental Labs</h2>
+          <span class="inline-block w-10 h-1 bg-red-500 rounded"></span>
+        </div>
+        <p class="mt-2 text-slate-600">We help practices adopt digital dentistry with reliable manufacturing and friendly support. Our goal is to reduce remakes, chair time, and stress — and to deliver beautiful results for every patient.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-red-600 mt-1"></span> UK-based production &amp; support</li>
+          <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-red-600 mt-1"></span> ISO-aligned processes and QA</li>
+          <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-red-600 mt-1"></span> Secure data handling and GDPR compliant</li>
+          <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-red-600 mt-1"></span> Clear service-level communication</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border bg-white p-4 shadow-sm">
+        <div class="aspect-video rounded-lg bg-slate-100 grid place-content-center text-slate-400">
+          <span>Team / lab photo</span>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+          <div class="rounded-xl border p-3">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Locations</p>
+            <p class="mt-1 font-medium">UK • EU • USA</p>
+          </div>
+          <div class="rounded-xl border p-3">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Founded</p>
+            <p class="mt-1 font-medium">2005</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-200">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+      <div>
+        <img
+          src="https://www.sundentallabs.co.uk/wp-content/themes/sun-dental-labs/img/common/sdl-logo.png"
+          alt="Sun Dental Labs logo"
+          class="h-8 w-auto object-contain"
+          loading="lazy"
+          width="180" height="32"
+        />
+        <p class="mt-3 text-slate-400">Simpson House, Stanley Rd, Barnsley S70 3PG, UK</p>
+        <a href="tel:+441226786163" class="mt-2 inline-flex items-center gap-2 hover:opacity-90"><span class="w-4 h-4 inline-block bg-white/80 rounded-full"></span> +44 01226 786163</a>
+      </div>
+      <div>
+        <p class="font-medium">Solutions</p>
+        <ul class="mt-3 space-y-2 text-slate-400">
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Zirconia</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Partials</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Implants</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Aligners</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-medium">Company</p>
+        <ul class="mt-3 space-y-2 text-slate-400">
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">About</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Partners</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-medium">Resources</p>
+        <ul class="mt-3 space-y-2 text-slate-400">
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Rx Forms</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Post Labels</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Support</a></li>
+          <li><a href="#" class="hover:text-white border-b border-transparent hover:border-red-500 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-top border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 py-4 text-xs text-slate-400 flex items-center justify-between">
+        <p>© <span id="year"></span> Sun Dental Labs. All rights reserved.</p>
+        <a href="#accessibility" class="hover:text-white">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('mobile-nav');
+    if (btn && panel) {
+      btn.addEventListener('click', () => {
+        const isHidden = panel.classList.contains('hidden');
+        if (isHidden) {
+          panel.classList.remove('hidden');
+          // simple enter animation
+          const content = panel.firstElementChild;
+          if (content) {
+            content.classList.add('fade-enter');
+            requestAnimationFrame(() => {
+              content.classList.add('fade-enter-active');
+              content.classList.remove('fade-enter');
+            });
+          }
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          panel.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+    // Current year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
